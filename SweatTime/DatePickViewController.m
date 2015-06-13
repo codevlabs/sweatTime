@@ -139,6 +139,8 @@ NSUserDefaults *defaults;
     CGRect toolbarTargetFrame = CGRectMake(0, self.view.bounds.size.height, 320, 44);
     CGRect datePickerTargetFrame = CGRectMake(0, self.view.bounds.size.height+44, 320, 216);
     [UIView beginAnimations:@"MoveOut" context:nil];
+    [self.view viewWithTag:52].alpha = 0;
+    [self.view viewWithTag:53].alpha = 0;
     [self.view viewWithTag:9].alpha = 0;
     [self.view viewWithTag:10].frame = datePickerTargetFrame;
     [self.view viewWithTag:11].frame = toolbarTargetFrame;

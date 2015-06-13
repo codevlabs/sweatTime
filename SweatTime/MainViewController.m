@@ -25,6 +25,9 @@ AppDelegate *appDelegate;
     self.clientButton.clipsToBounds = YES;
     
     [self performSelector:@selector(requestAccessToEvents) withObject:nil afterDelay:0.4];
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+    [self.navigationController.interactivePopGestureRecognizer setEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {

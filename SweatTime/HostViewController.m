@@ -14,6 +14,8 @@
 @end
 
 @implementation HostViewController
+NSDate *receivedStartDate;
+NSDate *receivedEndDate;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -187,7 +189,22 @@
     if ([stringFromData isEqualToString:@"EOM"]) {
         
         // We have, so show the data,
+        //here here here --here--
         [self.resultTextView setText:[[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]];
+        
+        NSArray *datesStringArray = [self.resultTextView.text componentsSeparatedByString:@"-"];
+        //if the datestring is null then replace with blank string
+        NSString *startDateString = datesStringArray[0] ? datesStringArray[0] : @"";
+        NSString *endDateString = datesStringArray[1] ? datesStringArray[1] : @"";
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"d MMM yyyy";
+        
+        receivedStartDate = [formatter dateFromString:startDateString];
+        receivedEndDate = [formatter dateFromString:endDateString];
+        
+        NSLog(@"start date : %@" , receivedStartDate);
+        NSLog(@"end date : %@" , receivedEndDate);
         
         // Cancel our subscription to the characteristic
         [peripheral setNotifyValue:NO forCharacteristic:characteristic];

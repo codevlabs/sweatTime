@@ -13,6 +13,7 @@
 @end
 
 @implementation ClientViewController
+NSUserDefaults *defaults;
 #define NOTIFY_MTU      20
 
 - (void)viewDidLoad {
@@ -20,6 +21,15 @@
     // Do any additional setup after loading the view.
     // Start up the CBPeripheralManager
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"d MMM yyyy";
+    //NSString *dstring = [formatter stringFromDate:[NSDate date]];
+    NSDate *startDate = [defaults objectForKey:@"startDate"];
+    NSDate *endDate = [defaults objectForKey:@"endDate"];
+    
+    self.startDateLabel.text = [formatter stringFromDate:startDate];
+    self.endDateLabel.text = [formatter stringFromDate:endDate];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -79,7 +89,10 @@
     NSLog(@"Central subscribed to characteristic");
     
     // Get the data
-    self.dataToSend = [self.textView.text dataUsingEncoding:NSUTF8StringEncoding];
+    // --here--
+    NSString *tmpString = [[self.startDateLabel.text stringByAppendingString:@"-"] stringByAppendingString:self.endDateLabel.text];
+    //self.dataToSend = [self.textView.text dataUsingEncoding:NSUTF8StringEncoding];
+    self.dataToSend = [tmpString dataUsingEncoding:NSUTF8StringEncoding];
     
     // Reset the index
     self.sendDataIndex = 0;

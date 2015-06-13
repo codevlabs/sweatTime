@@ -20,6 +20,7 @@
 		0694971D1B2BE87800820620 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0694971C1B2BE87800820620 /* Foundation.framework */; };
 		069497201B2BE8AE00820620 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0694971F1B2BE8AE00820620 /* MainViewController.m */; };
 		06C220011B2C11FF00ECEFEA /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C220001B2C11FF00ECEFEA /* ClientViewController.m */; };
+		06C220041B2C20FE00ECEFEA /* DatePickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C220031B2C20FE00ECEFEA /* DatePickViewController.m */; };
 		06C67FD21B2BEFEC00666616 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C67FD11B2BEFEC00666616 /* HostViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		0694971F1B2BE8AE00820620 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		06C21FFF1B2C11FF00ECEFEA /* ClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientViewController.h; sourceTree = "<group>"; };
 		06C220001B2C11FF00ECEFEA /* ClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientViewController.m; sourceTree = "<group>"; };
+		06C220021B2C20FE00ECEFEA /* DatePickViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickViewController.h; sourceTree = "<group>"; };
+		06C220031B2C20FE00ECEFEA /* DatePickViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickViewController.m; sourceTree = "<group>"; };
 		06C67FD01B2BEFEC00666616 /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
 		06C67FD11B2BEFEC00666616 /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
 		06C67FD31B2BF06C00666616 /* TransferService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 				06C67FD31B2BF06C00666616 /* TransferService.h */,
 				06C21FFF1B2C11FF00ECEFEA /* ClientViewController.h */,
 				06C220001B2C11FF00ECEFEA /* ClientViewController.m */,
+				06C220021B2C20FE00ECEFEA /* DatePickViewController.h */,
+				06C220031B2C20FE00ECEFEA /* DatePickViewController.m */,
 			);
 			path = SweatTime;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				06C67FD21B2BEFEC00666616 /* HostViewController.m in Sources */,
 				069496F61B2BE82A00820620 /* AppDelegate.m in Sources */,
 				069496F31B2BE82A00820620 /* main.m in Sources */,
+				06C220041B2C20FE00ECEFEA /* DatePickViewController.m in Sources */,
 				069497201B2BE8AE00820620 /* MainViewController.m in Sources */,
 				06C220011B2C11FF00ECEFEA /* ClientViewController.m in Sources */,
 			);

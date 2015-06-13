@@ -20,4 +20,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *advertisingSwitch;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
+@property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
+
 @end

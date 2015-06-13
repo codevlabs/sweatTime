@@ -433,6 +433,24 @@
                     
                     [self.commonFreeTime addObject:tmpCommonFree];
                 }
+                else
+                {
+                    tmpCommonFree.startDate = tmpHisStartDate;
+                    if([tmpHisEndDate isEqualToDate:tmpMyEndDate])
+                    {
+                        tmpCommonFree.endDate = [tmpHisEndDate copy];
+                    }
+                    else if([tmpHisEndDate isLaterThanDate:tmpMyEndDate])
+                    {
+                        tmpCommonFree.endDate = [tmpMyEndDate copy];
+                    }
+                    else
+                    {
+                        tmpCommonFree.endDate = [tmpHisEndDate copy];
+                    }
+                    
+                    [self.commonFreeTime addObject:tmpCommonFree];
+                }
                 
             }
         }

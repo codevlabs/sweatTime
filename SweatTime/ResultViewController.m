@@ -22,6 +22,7 @@
     //tableview no row after the last data row and allow editing
     self.resultTable.allowsMultipleSelectionDuringEditing = NO;
     self.resultTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.resultTable.rowHeight = 80;
     
 }
 

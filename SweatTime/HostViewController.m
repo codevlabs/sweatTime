@@ -293,6 +293,12 @@ NSDate *receivedEndDate;
     [self.centralManager cancelPeripheralConnection:self.discoveredPeripheral];
 }
 
+
+
+- (IBAction)backButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 

@@ -241,6 +241,11 @@ NSUserDefaults *defaults;
 }
 
 
+
+- (IBAction)backButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /** Finishes the editing */
 - (void)dismissKeyboard
 {

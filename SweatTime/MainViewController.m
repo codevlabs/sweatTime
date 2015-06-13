@@ -20,6 +20,9 @@
     self.hostButton.clipsToBounds = YES;
     //set clientbutton layout
     self.clientButton.clipsToBounds = YES;
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+    [self.navigationController.interactivePopGestureRecognizer setEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {

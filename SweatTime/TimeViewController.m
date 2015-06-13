@@ -76,7 +76,7 @@ NSUserDefaults *defaults;
     NSDateComponents *start_date_components = [[NSDateComponents alloc] init];
     start_date_components.day = [self daysBetweenDate:[NSDate date] andDate:[defaults objectForKey:@"startDate"]];;
     NSDate *start_date = [calendar dateByAddingComponents:start_date_components
-                                                   toDate:[NSDate date]
+                                                   toDate:now
                                                   options:0];
     start_date = [calendar dateBySettingHour:0  minute:0  second:0  ofDate:start_date options:0];
     
@@ -84,7 +84,7 @@ NSUserDefaults *defaults;
     // Create the end date components
     NSDateComponents *end_date_components = [[NSDateComponents alloc] init];
     end_date_components.day = [self daysBetweenDate:[NSDate date] andDate:[defaults objectForKey:@"endDate"]];;
-    NSDate *end_date_end = [calendar dateBySettingHour:0 minute:0 second:0 ofDate:now options:0];
+    NSDate *end_date_end = [calendar dateBySettingHour:23 minute:59 second:59 ofDate:now options:0];
     NSDate *end_date = [calendar dateByAddingComponents:end_date_components
                                                  toDate:end_date_end
                                                 options:0];

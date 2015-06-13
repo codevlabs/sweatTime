@@ -21,6 +21,9 @@ NSDateFormatter *formatter;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // Start up the CBPeripheralManager
+    
+    self.textView.hidden = YES;
+    
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
     
     formatter = [[NSDateFormatter alloc] init];

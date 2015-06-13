@@ -59,7 +59,19 @@
     NSInteger month = [components month];
     NSInteger year = [components year];
     
-    cell.dateLabel.text = [NSString stringWithFormat:@"%i - %i - %i",day,month,year];
+    NSDateComponents *components2 = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:tmpFree.endDate];
+    NSInteger day2 = [components2 day];
+    NSInteger month2 = [components2 month];
+    NSInteger year2 = [components2 year];
+    
+    if(day == day2 && month == month2 && year == year2)
+    {
+        cell.dateLabel.text = [NSString stringWithFormat:@"%i - %i - %i",day,month,year];
+    }
+    else
+    {
+        cell.dateLabel.text = [NSString stringWithFormat:@"%i - %i - %i to %i - %i - %i",day,month,year, day2, month2, year2];
+    }
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"HH:mm";

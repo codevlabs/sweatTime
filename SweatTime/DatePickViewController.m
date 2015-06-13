@@ -94,6 +94,7 @@ NSUserDefaults *defaults;
     toolBar.barStyle = UIBarStyleBlackTranslucent;
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDatePicker:)];
+    [doneButton setTintColor:[UIColor whiteColor]];
     [toolBar setItems:[NSArray arrayWithObjects:spacer, doneButton, nil]];
     [self.view addSubview:toolBar];
     
@@ -170,6 +171,10 @@ NSUserDefaults *defaults;
         [self.chooseEndDateButton setTitle:senderDatestring forState:UIControlStateNormal];
         [defaults setObject:sender.date forKey:@"endDate"];
     }
+}
+
+- (IBAction)backButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

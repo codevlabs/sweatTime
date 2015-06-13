@@ -8,6 +8,7 @@
 
 #import "HostViewController.h"
 #import "TransferService.h"
+#import "CompareViewController.h"
 
 @interface HostViewController ()
 
@@ -16,16 +17,22 @@
 @implementation HostViewController
 NSDate *receivedStartDate;
 NSDate *receivedEndDate;
-
+NSDateFormatter *dateFormatter;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"d MMM yyyy HH mm";
     
     //Create CoreBluetooth Central Manager
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
     
     //Incoming data store
     self.data = [[NSMutableData alloc] init];
+    
+    //Initialize opponent freetime mutable array
+    self.opponentFreeTime = [[NSMutableArray alloc] init];
     
 }
 
@@ -191,17 +198,29 @@ NSDate *receivedEndDate;
         // We have, so show the data,
         //here here here --here--
         [self.resultTextView setText:[[NSString alloc] initWithData:self.data encoding:NSUTF8StringEncoding]];
-        
-        NSArray *datesStringArray = [self.resultTextView.text componentsSeparatedByString:@"-"];
-        //if the datestring is null then replace with blank string
-        NSString *startDateString = datesStringArray[0] ? datesStringArray[0] : @"";
-        NSString *endDateString = datesStringArray[1] ? datesStringArray[1] : @"";
+        NSLog(@"received string = %@", self.resultTextView.text);
+        NSArray *datesStringArray = [self.resultTextView.text componentsSeparatedByString:@"+"];
+        for(int i=0; i<[datesStringArray count]; i++)
+        {
+            NSArray *tmpIntervalStringArray = [datesStringArray[i] componentsSeparatedByString:@"-"];
+            NSString *tmpStartDateString = tmpIntervalStringArray[0];
+            NSString *tmpEndDateString = tmpIntervalStringArray[1];
+            
+            NSDate *tmpStartDate  = [dateFormatter dateFromString:tmpStartDateString];
+            NSDate *tmpEndDate = [dateFormatter dateFromString:tmpEndDateString];
+            FreeTime *tmpFree = [[FreeTime alloc] init];
+            tmpFree.startDate = [tmpStartDate copy];
+            tmpFree.endDate = [tmpEndDate copy];
+            
+            [self.opponentFreeTime addObject:tmpFree];
+            
+        }
         
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"d MMM yyyy";
         
-        receivedStartDate = [formatter dateFromString:startDateString];
-        receivedEndDate = [formatter dateFromString:endDateString];
+        //receivedStartDate = [formatter dateFromString:startDateString];
+        //receivedEndDate = [formatter dateFromString:endDateString];
         
         NSLog(@"start date : %@" , receivedStartDate);
         NSLog(@"end date : %@" , receivedEndDate);
@@ -211,6 +230,7 @@ NSDate *receivedEndDate;
         
         // and disconnect from the peripehral
         [self.centralManager cancelPeripheralConnection:peripheral];
+        [self performSegueWithIdentifier:@"showCompare" sender:self];
     }
     
     // Otherwise, just add the data on to what we already have
@@ -218,6 +238,7 @@ NSDate *receivedEndDate;
     
     // Log it
     NSLog(@"Received: %@", stringFromData);
+    NSLog(@"count of opponent free time %lu", (unsigned long)[self.opponentFreeTime count]);
 }
 
 /** The peripheral letting us know whether our subscribe/unsubscribe happened or not
@@ -293,14 +314,19 @@ NSDate *receivedEndDate;
     [self.centralManager cancelPeripheralConnection:self.discoveredPeripheral];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([segue.identifier isEqualToString:@"showCompare"])
+    {
+        CompareViewController *cvc = [segue destinationViewController];
+        [cvc setFreeTimePassedFromHost:self.opponentFreeTime];
+    }
 }
-*/
+
 
 @end

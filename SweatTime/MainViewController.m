@@ -7,13 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "AppDelegate.h"
 
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
-
+AppDelegate *appDelegate;
 - (void)viewDidLoad {
     [super viewDidLoad];
     //set hostbutton layout
@@ -22,6 +23,8 @@
     //set clientbutton layout
     self.clientButton.layer.cornerRadius = 20;
     self.clientButton.clipsToBounds = YES;
+    
+    [self performSelector:@selector(requestAccessToEvents) withObject:nil afterDelay:0.4];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +32,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)requestAccessToEvents{
+    
+    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    [appDelegate.eventManager.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        if (error == nil) {
+            // Store the returned granted value.
+            appDelegate.eventManager.eventsAccessGranted = granted;
+        }
+        else{
+            // In case of error, just log its description to the debugger.
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }];
+    
+}
 /*
 #pragma mark - Navigation
 

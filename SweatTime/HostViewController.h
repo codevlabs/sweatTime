@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import "FreeTime.h"
 
 @interface HostViewController : UIViewController <CBCentralManagerDelegate, CBPeripheralDelegate>
 
@@ -15,5 +16,5 @@
 @property (strong, nonatomic) CBPeripheral          *discoveredPeripheral;
 @property (strong, nonatomic) NSMutableData         *data;
 @property (weak, nonatomic) IBOutlet UITextView *resultTextView;
-
+@property (strong, nonatomic) NSMutableArray *opponentFreeTime;
 @end

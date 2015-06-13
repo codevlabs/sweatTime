@@ -152,8 +152,6 @@ NSUserDefaults *defaults;
 }
 
 - (void)changeDate:(UIDatePicker *)sender {
-    NSLog(@"New Date: %@", sender.date);
-    NSLog(@"picker tag: %i", sender.tag);
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"d MMM yyyy";

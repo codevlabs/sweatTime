@@ -14,6 +14,7 @@
 
 @implementation ClientViewController
 NSUserDefaults *defaults;
+NSDateFormatter *formatter;
 #define NOTIFY_MTU      20
 
 - (void)viewDidLoad {
@@ -22,14 +23,21 @@ NSUserDefaults *defaults;
     // Start up the CBPeripheralManager
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
     
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"d MMM yyyy";
+    formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"d MMM yyyy HH mm";
     //NSString *dstring = [formatter stringFromDate:[NSDate date]];
+    defaults = [NSUserDefaults standardUserDefaults];
     NSDate *startDate = [defaults objectForKey:@"startDate"];
     NSDate *endDate = [defaults objectForKey:@"endDate"];
     
     self.startDateLabel.text = [formatter stringFromDate:startDate];
     self.endDateLabel.text = [formatter stringFromDate:endDate];
+    
+    for(FreeTime *fr in self.receivedFreeTime)
+    {
+        NSLog(@"client free start of : %@", fr.startDate);
+        NSLog(@"client free end of : %@", fr.endDate);
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -90,7 +98,19 @@ NSUserDefaults *defaults;
     
     // Get the data
     // --here--
-    NSString *tmpString = [[self.startDateLabel.text stringByAppendingString:@"-"] stringByAppendingString:self.endDateLabel.text];
+    NSString *tmpString = @"";
+    
+    for(FreeTime *fr in self.receivedFreeTime)
+    {
+        tmpString = [[[tmpString stringByAppendingString:[formatter stringFromDate:fr.startDate]] stringByAppendingString:@"-"]stringByAppendingString:[formatter stringFromDate:fr.endDate]];
+        tmpString = [tmpString stringByAppendingString:@"+"];
+    }
+    
+    //remove the last "+" at the end
+    if([tmpString length] > 1)
+    {
+        tmpString =  [tmpString substringToIndex:[tmpString length]-1];
+    }
     //self.dataToSend = [self.textView.text dataUsingEncoding:NSUTF8StringEncoding];
     self.dataToSend = [tmpString dataUsingEncoding:NSUTF8StringEncoding];
     

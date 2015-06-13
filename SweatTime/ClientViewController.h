@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "TransferService.h"
+#import "FreeTime.h"
 
 @interface ClientViewController : UIViewController <CBPeripheralManagerDelegate, UITextViewDelegate>
 
@@ -23,4 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *startDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endDateLabel;
 
+
+@property (strong, nonatomic) NSMutableArray *receivedFreeTime;
 @end

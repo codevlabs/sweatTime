@@ -22,6 +22,15 @@
 		06C220011B2C11FF00ECEFEA /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C220001B2C11FF00ECEFEA /* ClientViewController.m */; };
 		06C220041B2C20FE00ECEFEA /* DatePickViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C220031B2C20FE00ECEFEA /* DatePickViewController.m */; };
 		06C67FD21B2BEFEC00666616 /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C67FD11B2BEFEC00666616 /* HostViewController.m */; };
+		06CF9D4D1B2C71CC003E1214 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9D4C1B2C71CC003E1214 /* TimeViewController.m */; };
+		06CF9D501B2C71F4003E1214 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CF9D4E1B2C71F4003E1214 /* EventKit.framework */; };
+		06CF9D511B2C71F4003E1214 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CF9D4F1B2C71F4003E1214 /* EventKitUI.framework */; };
+		06CF9D541B2C725C003E1214 /* EventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9D531B2C725C003E1214 /* EventManager.m */; };
+		06CF9D571B2C811A003E1214 /* FreeTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9D561B2C811A003E1214 /* FreeTime.m */; };
+		06CF9D5A1B2C9218003E1214 /* CompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9D591B2C9218003E1214 /* CompareViewController.m */; };
+		06CF9D5D1B2C9F20003E1214 /* CustomDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9D5C1B2C9F20003E1214 /* CustomDate.m */; };
+		06CF9D601B2CBF68003E1214 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9D5F1B2CBF68003E1214 /* ResultViewController.m */; };
+		06CF9D631B2CC185003E1214 /* ResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF9D621B2CC185003E1214 /* ResultTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +70,22 @@
 		06C67FD01B2BEFEC00666616 /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
 		06C67FD11B2BEFEC00666616 /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
 		06C67FD31B2BF06C00666616 /* TransferService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransferService.h; sourceTree = "<group>"; };
+		06CF9D4B1B2C71CC003E1214 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		06CF9D4C1B2C71CC003E1214 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		06CF9D4E1B2C71F4003E1214 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		06CF9D4F1B2C71F4003E1214 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		06CF9D521B2C725C003E1214 /* EventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventManager.h; sourceTree = "<group>"; };
+		06CF9D531B2C725C003E1214 /* EventManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventManager.m; sourceTree = "<group>"; };
+		06CF9D551B2C811A003E1214 /* FreeTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeTime.h; sourceTree = "<group>"; };
+		06CF9D561B2C811A003E1214 /* FreeTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeTime.m; sourceTree = "<group>"; };
+		06CF9D581B2C9218003E1214 /* CompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareViewController.h; sourceTree = "<group>"; };
+		06CF9D591B2C9218003E1214 /* CompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareViewController.m; sourceTree = "<group>"; };
+		06CF9D5B1B2C9F20003E1214 /* CustomDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDate.h; sourceTree = "<group>"; };
+		06CF9D5C1B2C9F20003E1214 /* CustomDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDate.m; sourceTree = "<group>"; };
+		06CF9D5E1B2CBF68003E1214 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		06CF9D5F1B2CBF68003E1214 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		06CF9D611B2CC185003E1214 /* ResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultTableViewCell.h; sourceTree = "<group>"; };
+		06CF9D621B2CC185003E1214 /* ResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06CF9D501B2C71F4003E1214 /* EventKit.framework in Frameworks */,
+				06CF9D511B2C71F4003E1214 /* EventKitUI.framework in Frameworks */,
 				0694971D1B2BE87800820620 /* Foundation.framework in Frameworks */,
 				0694971B1B2BE87300820620 /* UIKit.framework in Frameworks */,
 				069497191B2BE86700820620 /* CoreGraphics.framework in Frameworks */,
@@ -88,6 +115,8 @@
 		069496E41B2BE82A00820620 = {
 			isa = PBXGroup;
 			children = (
+				06CF9D4E1B2C71F4003E1214 /* EventKit.framework */,
+				06CF9D4F1B2C71F4003E1214 /* EventKitUI.framework */,
 				0694971C1B2BE87800820620 /* Foundation.framework */,
 				0694971A1B2BE87300820620 /* UIKit.framework */,
 				069497181B2BE86700820620 /* CoreGraphics.framework */,
@@ -127,6 +156,20 @@
 				06C220001B2C11FF00ECEFEA /* ClientViewController.m */,
 				06C220021B2C20FE00ECEFEA /* DatePickViewController.h */,
 				06C220031B2C20FE00ECEFEA /* DatePickViewController.m */,
+				06CF9D4B1B2C71CC003E1214 /* TimeViewController.h */,
+				06CF9D4C1B2C71CC003E1214 /* TimeViewController.m */,
+				06CF9D521B2C725C003E1214 /* EventManager.h */,
+				06CF9D531B2C725C003E1214 /* EventManager.m */,
+				06CF9D551B2C811A003E1214 /* FreeTime.h */,
+				06CF9D561B2C811A003E1214 /* FreeTime.m */,
+				06CF9D581B2C9218003E1214 /* CompareViewController.h */,
+				06CF9D591B2C9218003E1214 /* CompareViewController.m */,
+				06CF9D5B1B2C9F20003E1214 /* CustomDate.h */,
+				06CF9D5C1B2C9F20003E1214 /* CustomDate.m */,
+				06CF9D5E1B2CBF68003E1214 /* ResultViewController.h */,
+				06CF9D5F1B2CBF68003E1214 /* ResultViewController.m */,
+				06CF9D611B2CC185003E1214 /* ResultTableViewCell.h */,
+				06CF9D621B2CC185003E1214 /* ResultTableViewCell.m */,
 			);
 			path = SweatTime;
 			sourceTree = "<group>";
@@ -259,11 +302,18 @@
 			files = (
 				069496F91B2BE82A00820620 /* ViewController.m in Sources */,
 				06C67FD21B2BEFEC00666616 /* HostViewController.m in Sources */,
+				06CF9D5A1B2C9218003E1214 /* CompareViewController.m in Sources */,
 				069496F61B2BE82A00820620 /* AppDelegate.m in Sources */,
 				069496F31B2BE82A00820620 /* main.m in Sources */,
+				06CF9D571B2C811A003E1214 /* FreeTime.m in Sources */,
 				06C220041B2C20FE00ECEFEA /* DatePickViewController.m in Sources */,
+				06CF9D4D1B2C71CC003E1214 /* TimeViewController.m in Sources */,
+				06CF9D5D1B2C9F20003E1214 /* CustomDate.m in Sources */,
 				069497201B2BE8AE00820620 /* MainViewController.m in Sources */,
 				06C220011B2C11FF00ECEFEA /* ClientViewController.m in Sources */,
+				06CF9D541B2C725C003E1214 /* EventManager.m in Sources */,
+				06CF9D631B2CC185003E1214 /* ResultTableViewCell.m in Sources */,
+				06CF9D601B2CBF68003E1214 /* ResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

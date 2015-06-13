@@ -33,8 +33,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O07-Cm-dwP">
-                                <rect key="frame" x="83" y="326" width="155" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O07-Cm-dwP">
+                                <rect key="frame" x="84" y="462" width="155" height="40"/>
                                 <state key="normal" image="Find Host button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,8 +44,8 @@
                                     <segue destination="D1E-53-fxT" kind="show" id="lyD-0e-sAN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-iK-nOL">
-                                <rect key="frame" x="83" y="201" width="155" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-iK-nOL">
+                                <rect key="frame" x="84" y="387" width="155" height="40"/>
                                 <state key="normal" image="Host button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,8 +55,31 @@
                                     <segue destination="7rY-Bc-Ors" kind="show" id="M4p-Zb-L6E"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="XEk-4g-JES">
+                                <rect key="frame" x="41" y="77" width="240" height="310"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="8xI-Ln-L6D"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="310" id="BFK-Gk-Jyw"/>
+                                    <constraint firstAttribute="height" constant="310" id="Esi-tU-iQ9"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="ZRr-5V-aQc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BFK-Gk-Jyw"/>
+                                        <exclude reference="ZRr-5V-aQc"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ZuQ-iK-nOL" secondAttribute="centerX" constant="-0.5" id="2GG-zT-Ztg"/>
+                            <constraint firstItem="XEk-4g-JES" firstAttribute="centerX" secondItem="O07-Cm-dwP" secondAttribute="centerX" constant="-0.5" id="C41-XG-Kyz"/>
+                            <constraint firstItem="ZuQ-iK-nOL" firstAttribute="top" secondItem="XEk-4g-JES" secondAttribute="bottom" constant="8" id="HkB-bR-efw"/>
+                            <constraint firstAttribute="centerX" secondItem="XEk-4g-JES" secondAttribute="centerX" id="SLh-ko-8CF"/>
+                            <constraint firstAttribute="centerY" secondItem="XEk-4g-JES" secondAttribute="centerY" constant="60" id="ZSF-fi-B7v"/>
+                            <constraint firstItem="O07-Cm-dwP" firstAttribute="top" secondItem="XEk-4g-JES" secondAttribute="bottom" constant="83" id="qQ6-bE-YPN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Mode" id="gn7-kX-V1s"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -81,21 +104,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-e2-FjG">
-                                <rect key="frame" x="143" y="159" width="40" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZId-ME-EEa">
+                                <rect key="frame" x="144" y="273" width="33" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZId-ME-EEa">
-                                <rect key="frame" x="151" y="273" width="18" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHZ-ZR-8Aq">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHZ-ZR-8Aq">
                                 <rect key="frame" x="75" y="203" width="170" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Choose start date">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -106,7 +124,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viO-NL-oHd">
                                 <rect key="frame" x="70" y="302" width="170" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <state key="normal" title="Choose end date">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -126,6 +144,12 @@
                                     <segue destination="4fh-7I-PI9" kind="show" id="EMu-cs-7Dt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIq-e2-FjG">
+                                <rect key="frame" x="136" y="164" width="48" height="21"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -251,5 +275,6 @@
         <image name="Find Host button (Selected)" width="155" height="40"/>
         <image name="Host button" width="155" height="40"/>
         <image name="Host button (Selected)" width="155" height="40"/>
+        <image name="Logo" width="512" height="512"/>
     </resources>
 </document>

@@ -36,7 +36,6 @@ NSUserDefaults *defaults;
     [self.chooseEndDateButton setTitle:dstring forState:UIControlStateNormal];
     
     //set next button style
-    self.nextButton.layer.cornerRadius = 20;
     self.nextButton.clipsToBounds = YES;
 
 }

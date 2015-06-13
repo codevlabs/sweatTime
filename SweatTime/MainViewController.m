@@ -17,10 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //set hostbutton layout
-    self.hostButton.layer.cornerRadius = 20;
     self.hostButton.clipsToBounds = YES;
     //set clientbutton layout
-    self.clientButton.layer.cornerRadius = 20;
     self.clientButton.clipsToBounds = YES;
 }
 

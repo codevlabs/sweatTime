@@ -11,5 +11,6 @@
 @interface MainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *hostButton;
 @property (weak, nonatomic) IBOutlet UIButton *clientButton;
+@property (weak, nonatomic) IBOutlet UILabel *dataTransferredLabel;
 
 @end

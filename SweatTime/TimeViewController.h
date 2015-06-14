@@ -8,12 +8,26 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+
+#import <CoreBluetooth/CoreBluetooth.h>
+#import "TransferService.h"
+
 #import "FreeTime.h"
-@interface TimeViewController : UIViewController
+@interface TimeViewController : UIViewController <CBPeripheralManagerDelegate, UITextViewDelegate>
+
+
+@property (strong, nonatomic) CBPeripheralManager       *peripheralManager;
+@property (strong, nonatomic) CBMutableCharacteristic   *transferCharacteristic;
+@property (strong, nonatomic) NSData                    *dataToSend;
+@property (nonatomic, readwrite) NSInteger              sendDataIndex;
+
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UISwitch *advertisingSwitch;
 
 @property (nonatomic, strong) NSArray *arrCalendars;
 @property (nonatomic, strong) NSMutableArray *freeCalendars;
 
+@property (strong, nonatomic) NSMutableArray *receivedFreeTime;
 
 -(void)loadEventCalendars;
 

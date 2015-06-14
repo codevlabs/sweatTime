@@ -75,11 +75,11 @@
     
     if(day == day2 && month == month2 && year == year2)
     {
-        cell.dateLabel.text = [NSString stringWithFormat:@"%i - %i - %i",day,month,year];
+        cell.dateLabel.text = [NSString stringWithFormat:@"%li - %li - %li",(long)day,(long)month,(long)year];
     }
     else
     {
-        cell.dateLabel.text = [NSString stringWithFormat:@"%i - %i - %i to %i - %i - %i",day,month,year, day2, month2, year2];
+        cell.dateLabel.text = [NSString stringWithFormat:@"%li - %li - %li to %li - %li - %li",(long)day,(long)month,(long)year, (long)day2, (long)month2, (long)year2];
     }
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -92,6 +92,17 @@
     // Configure the cell...
     
     return cell;
+}
+
+// Tap on table Row
+- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //open calendar with start date
+    NSDate *openDate = ((FreeTime *)[self.passedCommonFreeTime objectAtIndex:indexPath.row]).startDate;
+    NSInteger interval = [openDate timeIntervalSinceReferenceDate];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"calshow:%ld", interval]];
+    [[UIApplication sharedApplication] openURL:url];
+    
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"calshow://"]];
 }
 
 - (IBAction)backButton:(id)sender {

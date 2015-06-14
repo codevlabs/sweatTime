@@ -28,6 +28,19 @@ AppDelegate *appDelegate;
     
     self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
     [self.navigationController.interactivePopGestureRecognizer setEnabled:YES];
+    
+    //hide data transferred label
+    self.dataTransferredLabel.hidden = YES;
+    self.dataTransferredLabel.alpha = 0.0;
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    if(self.dataTransferredLabel.hidden == NO)
+    {
+        [UIView animateWithDuration:2.0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{self.dataTransferredLabel.alpha = 0.0;} completion: ^(BOOL finished){
+            self.dataTransferredLabel.hidden = YES;
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

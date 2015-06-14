@@ -11,7 +11,7 @@
 
 #import "AppDelegate.h"
 #import "ClientViewController.h"
-
+#import "MainViewController.h"
 
 @interface TimeViewController ()
 
@@ -511,7 +511,12 @@ NSDateFormatter *formatter;
             [self.advertisingSwitch setOn:NO];
             [self.peripheralManager stopAdvertising];
             
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            //popToRoot
+            MainViewController *mvc = (MainViewController *)[self.navigationController.viewControllers objectAtIndex:0];
+            mvc.dataTransferredLabel.hidden = NO;
+            mvc.dataTransferredLabel.alpha = 1.0;
+            [self.navigationController popToViewController:mvc animated:YES];
+            //[self.navigationController popToRootViewControllerAnimated:YES];
         }
         
         // It didn't send, so we'll exit and wait for peripheralManagerIsReadyToUpdateSubscribers to call sendData again

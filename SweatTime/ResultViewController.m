@@ -24,6 +24,8 @@
     self.resultTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.resultTable.rowHeight = 80;
     
+    self.emptyTable.hidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +44,13 @@
     //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     NSLog(@"commonFreeTime count is %lu", (unsigned long)[self.passedCommonFreeTime count]);
+    
+    if ([self.passedCommonFreeTime count] == 0) {
+        self.emptyTable.hidden = NO;
+    } else {
+        self.emptyTable.hidden = YES;
+    }
+    
     return [self.passedCommonFreeTime count];
 }
 
@@ -83,6 +92,13 @@
     // Configure the cell...
     
     return cell;
+}
+
+- (IBAction)backButton:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
 }
 
 

@@ -34,6 +34,8 @@ NSDateFormatter *dateFormatter;
     //Initialize opponent freetime mutable array
     self.opponentFreeTime = [[NSMutableArray alloc] init];
     
+    self.resultTextView.hidden = YES;
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

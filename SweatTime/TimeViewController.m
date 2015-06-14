@@ -510,6 +510,8 @@ NSDateFormatter *formatter;
             NSLog(@"Sent: EOM");
             [self.advertisingSwitch setOn:NO];
             [self.peripheralManager stopAdvertising];
+            
+            [self.navigationController popToRootViewControllerAnimated:YES];
         }
         
         // It didn't send, so we'll exit and wait for peripheralManagerIsReadyToUpdateSubscribers to call sendData again
@@ -575,6 +577,7 @@ NSDateFormatter *formatter;
                 NSLog(@"Sent: EOM");
                 [self.advertisingSwitch setOn:NO];
                 [self.peripheralManager stopAdvertising];
+                [self performSegueWithIdentifier:@"jumpToSelect" sender:self];
             }
             
             return;

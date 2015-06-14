@@ -261,8 +261,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Back" translatesAutoresizingMaskIntoConstraints="NO" id="5TH-RS-dPA" userLabel="Back Button Image">
                                 <rect key="frame" x="16" y="51" width="20" height="20"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-uS-XVD">
+                                <rect key="frame" x="48" y="182" width="225" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="BEs-AR-Loc"/>
+                                    <constraint firstAttribute="width" constant="225" id="Sk8-jg-f42"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="m7a-uS-XVD" secondAttribute="centerY" constant="60" id="Zc7-ie-hDN"/>
+                            <constraint firstAttribute="centerX" secondItem="m7a-uS-XVD" secondAttribute="centerX" constant="-0.5" id="uQm-HZ-kJe"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -285,8 +299,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JB-fp-ec8" userLabel="Back Button">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="120"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="7rY-Bc-Ors" eventType="touchUpInside" id="6Fh-lX-xaq"/>
+                                    <action selector="backButton:" destination="JpC-t2-pri" eventType="touchUpInside" id="LZD-9q-xjr"/>
+                                    <action selector="backButton:" destination="Xsh-XA-lRM" eventType="touchUpInside" id="dHf-NL-qVP"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Back" translatesAutoresizingMaskIntoConstraints="NO" id="jot-7N-2W9" userLabel="Back Button Image">
+                                <rect key="frame" x="16" y="51" width="20" height="20"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jUS-je-nO0">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="83" width="320" height="485"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="freeTimeResult" rowHeight="80" id="HiO-ni-vmw" customClass="ResultTableViewCell">
@@ -322,11 +350,26 @@
                                     <outlet property="delegate" destination="JpC-t2-pri" id="93I-Ze-2KR"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No common free time" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCy-bm-90K">
+                                <rect key="frame" x="48" y="242" width="225" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="iM8-rR-wGI"/>
+                                    <constraint firstAttribute="height" constant="84" id="xNh-wR-jva"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="uCy-bm-90K" secondAttribute="centerX" id="AYX-9R-q7f"/>
+                            <constraint firstAttribute="centerY" secondItem="uCy-bm-90K" secondAttribute="centerY" id="Rfv-CV-1iA"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="emptyTable" destination="uCy-bm-90K" id="uGm-xr-81g"/>
                         <outlet property="resultTable" destination="jUS-je-nO0" id="KmK-Fq-a6V"/>
                     </connections>
                 </viewController>

@@ -13,5 +13,6 @@
     @property (nonatomic, strong) NSMutableArray *passedCommonFreeTime;
 @property (weak, nonatomic) IBOutlet UITableView *resultTable;
 
+@property (weak, nonatomic) IBOutlet UILabel *emptyTable;
 
 @end
